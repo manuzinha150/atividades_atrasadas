@@ -1,0 +1,60 @@
+
+class Aluno {
+  String nome;
+  String turma;
+  List<double> notas = [];
+  double media = 0;
+  String situacao = "";
+
+  Aluno(this.nome, this.turma, this.notas) {
+    calcularMedia();
+    definirSituacao();
+  }
+
+  void calcularMedia() {
+    media = notas.reduce((a, b) => a + b) / notas.length;
+  }
+
+  void definirSituacao() {
+    if (media >= 7) {
+      situacao = "Aprovado";
+    } else if (media >= 5) {
+      situacao = "Recuperação";
+    } else {
+      situacao = "Reprovado";
+    }
+  }
+
+  void mostrar() {
+    print("Nome: $nome | Turma: $turma");
+    print("Notas: $notas");
+    print("Média: $media");
+    print("Situação: $situacao");
+    print("-----------------------------");
+  }
+}
+
+void main() {
+  List<String> turmas = ["Turma A", "Turma B", "Turma C", "Turma D"];
+  List<Aluno> alunos = [];
+
+  Random random = Random();
+
+  
+  for (String turma in turmas) {
+    for (int i = 1; i <= 20; i++) {
+      String nome = "Aluno_${turma}_$i";
+      List<double> notas = [
+        (random.nextDouble() * 10).roundToDouble(),
+        (random.nextDouble() * 10).roundToDouble(),
+        (random.nextDouble() * 10).roundToDouble(),
+      ];
+      alunos.add(Aluno(nome, turma, notas));
+    }
+  }
+
+  // Exibindo todos os alunos
+  for (Aluno a in alunos) {
+    a.mostrar();
+  }
+}
