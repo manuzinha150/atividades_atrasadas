@@ -1,58 +1,87 @@
-class Produto {
-  String nome;
-  double _preco = 0;
-  int _quantidade = 0;
+void main() {
+  // 1 - Lista de produtos
+  List<String> produtos = ['Arroz', 'Feijão', 'Macarrão', 'Leite', 'Café'];
+  produtos.add('Açúcar');
+  produtos.add('Farinha');
 
-  Produto(this.nome, double preco, int quantidade) {
-    setPreco(preco);
-    setQuantidade(quantidade);
+  print('Produtos com forEach:');
+  produtos.forEach((p) => print(p));
+
+  print('\nProdutos com for (posição):');
+  for (int i = 0; i < produtos.length; i++) {
+    print('Posição $i: ${produtos[i]}');
   }
 
-  double getPreco() => _preco;
-  int getQuantidade() => _quantidade;
+  produtos.remove('Leite');
+  produtos.removeAt(0);
 
-  void setPreco(double valor) {
-    if (valor > 0) {
-      _preco = valor;
-    } else {
-      print('Preço inválido para $nome');
-    }
+  print('\nQuantidade final: ${produtos.length}');
+  print('Lista vazia? ${produtos.isEmpty}');
+
+  // 2 - Lista de alunos presentes
+  List<String> presentes = [];
+  presentes.addAll(['Ana', 'Bruno', 'Carlos', 'Daniela', 'Eduardo']);
+
+  print('\nAlunos com forEach:');
+  presentes.forEach((aluno) => print(aluno));
+
+  print('\nAlunos numerados:');
+  for (int i = 0; i < presentes.length; i++) {
+    print('${i + 1} - ${presentes[i]}');
   }
 
-  void setQuantidade(int valor) {
-    if (valor >= 0) {
-      _quantidade = valor;
-    } else {
-      print('Quantidade inválida para $nome');
-    }
+  String busca = 'Carlos';
+  if (presentes.contains(busca)) {
+    print('\n$busca está na lista.');
   }
 
-  double valorTotal() {
-    return _preco * _quantidade;
+  presentes.remove('Daniela');
+  print('\nLista atualizada: $presentes');
+  print('Total de alunos: ${presentes.length}');
+
+  // 3 - Números pares
+  List<int> numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (int n in numeros) {
+    if (n % 2 == 0) print(n);
   }
 
-  void mostrar() {
-    print('Produto: $nome');
-    print('Preço: R\$ $_preco');
-    print('Quantidade: $_quantidade');
-    print('Total em estoque: R\$ ${valorTotal()}');
-    print('-----------------------------');
+  // 4 - Boas-vindas
+  List<String> nomes = ['Maria', 'João', 'Pedro'];
+  nomes.forEach((n) => print('Bem-vindo, $n!'));
+
+  // 5 - Média da turma
+  List<double> notas = [7.5, 8.0, 6.0, 9.0];
+  double soma = 0;
+  for (double n in notas) soma += n;
+  print('Média da turma: ${soma / notas.length}');
+
+  // 6 - Remover "Indisponível"
+  List<String> listaProdutos = ['Arroz', 'Indisponível', 'Feijão', 'Indisponível'];
+  listaProdutos.removeWhere((p) => p == 'Indisponível');
+  print('Lista final: $listaProdutos');
+
+  // 7 - Idades
+  List<int> idades = [12, 18, 20, 15, 30];
+  int maiores = 0;
+  for (int idade in idades) {
+    if (idade >= 18) maiores++;
   }
+  print('Maiores de 18: $maiores');
+
+  // 8 - Palavras com mais de 5 letras
+  List<String> palavras = ['casa', 'computador', 'sol', 'amizade'];
+  for (String p in palavras) {
+    if (p.length > 5) print(p);
+  }
+
+  // 9 - Preços com desconto
+  List<double> precos = [100, 50, 30];
+  for (int i = 0; i < precos.length; i++) {
+    precos[i] = precos[i] * 0.9;
+  }
+  print('Preços com desconto: $precos');
 }
 
-void main() {
-  Produto p1 = Produto('Celular', 2500, 8);
-  Produto p2 = Produto('Fone de ouvido', 0, 15); // preço inválido
-  Produto p3 = Produto('Monitor', 1200, -4);     // quantidade inválida
-
-  p1.mostrar();
-  p2.mostrar();
-  p3.mostrar();
-
-  // Testando alterações
-  p1.setPreco(-200);
-  p1.setQuantidade(-1);
-  p1.mostrar();
 
   p2.setPreco(200);
   p2.setQuantidade(10);
