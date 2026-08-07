@@ -1,0 +1,73 @@
+import 'dart:io';
+
+
+abstract class Deposito {
+  String nome;
+  Deposito(this.nome);
+
+  void trabalhar(); 
+}
+
+
+class Gerente extends Deposito {
+  Gerente(String nome) : super(nome);
+
+  @override
+  void trabalhar() {
+    print("O gerente $nome está organizando o depósito.");
+  }
+}
+
+class Caixa extends Deposito {
+  Caixa(String nome) : super(nome);
+
+  @override
+  void trabalhar() {
+    print("O caixa $nome está registrando as vendas.");
+  }
+}
+
+class Atendente extends Deposito {
+  Atendente(String nome) : super(nome);
+
+  @override
+  void trabalhar() {
+    print("O atendente $nome está ajudando os clientes.");
+  }
+}
+
+// Programa principal com menu
+void main() {
+  while (true) {
+    print("\n=== Menu de Funcionários ===");
+    print("1 - Gerente");
+    print("2 - Caixa");
+    print("3 - Atendente");
+    print("0 - Sair");
+
+    stdout.write("Escolha uma opção: ");
+    String? opcao = stdin.readLineSync();
+
+    if (opcao == "0") {
+      print("Encerrando o programa...");
+      break;
+    }
+
+    switch (opcao) {
+      case "1":
+        Gerente g = Gerente("Maria");
+        g.trabalhar();
+        break;
+      case "2":
+        Caixa c = Caixa("João");
+        c.trabalhar();
+        break;
+      case "3":
+        Atendente a = Atendente("Ana");
+        a.trabalhar();
+        break;
+      default:
+        print("Opção inválida.");
+    }
+  }
+}
