@@ -1,0 +1,74 @@
+void main() {
+  // Exercício 1
+  List<String> nomes = ['Ana','Bruno','Carlos','Daniela','Eduardo'];
+  for (var n in nomes) print(n);
+  nomes.forEach((n) => print(n));
+  print(nomes.length);
+  nomes.addAll(['Fernanda','Gabriel']);
+  print(nomes);
+
+  // Exercício 2
+  List<int> numeros = [4,8,15,16,23,42];
+  for (int i=0;i<numeros.length;i++) print('Posição $i: ${numeros[i]}');
+  for (var n in numeros) if (n>10) print(n);
+  print(numeros.length);
+
+  // Exercício 3
+  List<String> frutas = ['Maçã','Banana','Uva','Laranja','Melancia'];
+  print(frutas);
+  frutas.remove('Uva');
+  print(frutas);
+  frutas.add('Abacaxi');
+  frutas.forEach((f)=>print(f));
+
+  // Exercício 4
+  List<String> disciplinas = ['Matemática','Português','História','Geografia','Inglês'];
+  for (int i=0;i<disciplinas.length;i++) print('$i: ${disciplinas[i]}');
+  disciplinas.removeAt(2);
+  print(disciplinas);
+  print(disciplinas.length);
+
+  // Exercício 5
+  List<String> alunos = ['Ana','Bruno','Carlos','Daniela','Eduardo'];
+  String busca = 'Carlos';
+  bool achou=false;
+  for (int i=0;i<alunos.length;i++){
+    if(alunos[i]==busca){print('Encontrado na posição $i'); achou=true;}
+  }
+  if(!achou) print('Aluno não encontrado');
+
+  // Exercício 6
+  List<double> notas = [8.5,7.0,9.5,6.0,10.0];
+  double soma=0;
+  for (var n in notas) soma+=n;
+  double media=soma/notas.length;
+  print(media);
+  print(media>=7?'Média >= 7':'Média < 7');
+
+  // Exercício 7
+  List<int> listaNum=[1,2,3,4,5,6,7,8,9,10];
+  int pares=0;
+  for (var n in listaNum){if(n%2==0){print(n);pares++;}}
+  print(pares);
+
+  // Exercício 8
+  List<int> listaNum2=[11,12,13,14,15,16,17,18,19,20];
+  int impares=0;
+  listaNum2.forEach((n){if(n%2!=0){print(n);impares++;}});
+  print(impares);
+
+  // Exercício 9
+  List<String> tarefas=[];
+  print(tarefas.isEmpty);
+  tarefas.addAll(['Estudar','Ler','Treinar','Descansar']);
+  print(tarefas.isEmpty);
+  tarefas.forEach((t)=>print(t));
+  print(tarefas.length);
+
+  // Exercício 10
+  List<int> valores=[10,20,30,40,50];
+  for(int i=0;i<valores.length;i++) valores[i]*=2;
+  print(valores);
+  print('O for é melhor pois altera pelo índice.');
+}
+
