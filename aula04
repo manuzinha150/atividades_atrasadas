@@ -1,0 +1,130 @@
+import 'dart:io';
+
+void main() {
+  List<dynamic> aluno = [];
+
+  print('Digite o nome do aluno:');
+  String nome = stdin.readLineSync()!;
+
+  print('Digite a turma:');
+  String turma = stdin.readLineSync()!;
+
+  print('Digite a idade:');
+  int idade = int.parse(stdin.readLineSync()!);
+
+  print('Digite a primeira nota:');
+  double nota1 = double.parse(stdin.readLineSync()!);
+
+  print('Digite a segunda nota:');
+  double nota2 = double.parse(stdin.readLineSync()!);
+
+  double media = (nota1 + nota2) / 2;
+
+  aluno.add(nome);
+  aluno.add(turma);
+  aluno.add(idade);
+  aluno.add(nota1);
+  aluno.add(nota2);
+  aluno.add(media);
+
+  print('\n----- DADOS DO ALUNO -----');
+  print('Nome: ${aluno[0]}');
+  print('Turma: ${aluno[1]}');
+  print('Idade: ${aluno[2]}');
+  print('Nota 1: ${aluno[3]}');
+  print('Nota 2: ${aluno[4]}');
+  print('Média: ${aluno[5]}');
+
+  if (media >= 7) {
+    print('Status: Aprovado');
+  } else {
+    print('Status: Recuperação');
+  }
+}
+
+import 'dart:io';
+
+void main1() {
+  print('Digite seu nome:');
+  String nome = stdin.readLineSync()!;
+  print('Olá, $nome!');
+}
+
+void main2() {
+  print('Digite sua idade:');
+  int idade = int.parse(stdin.readLineSync()!);
+  print('No próximo ano você terá ${idade + 1} anos.');
+}
+
+void main3() {
+  print('Digite o primeiro número:');
+  int numero1 = int.parse(stdin.readLineSync()!);
+  print('Digite o segundo número:');
+  int numero2 = int.parse(stdin.readLineSync()!);
+  print('A soma é ${numero1 + numero2}');
+}
+
+void main4() {
+  print('Digite a primeira nota:');
+  double nota1 = double.parse(stdin.readLineSync()!);
+  print('Digite a segunda nota:');
+  double nota2 = double.parse(stdin.readLineSync()!);
+  print('A média é ${(nota1 + nota2) / 2}');
+}
+
+void main5() {
+  print('Digite o valor do produto:');
+  double valor = double.parse(stdin.readLineSync()!);
+  double valorFinal = valor - (valor * 0.10);
+  print('Valor com desconto: $valorFinal');
+}
+
+void main6() {
+  print('Digite sua idade:');
+  int idade = int.parse(stdin.readLineSync()!);
+  if (idade >= 16) {
+    print('Você pode votar.');
+  } else {
+    print('Você não pode votar.');
+  }
+}
+
+void main7() {
+  print('Digite o nome do aluno:');
+  String nome = stdin.readLineSync()!;
+  print('Digite o curso:');
+  String curso = stdin.readLineSync()!;
+  print('Digite a matrícula:');
+  String matricula = stdin.readLineSync()!;
+  print('Nome: $nome');
+  print('Curso: $curso');
+  print('Matrícula: $matricula');
+}
+
+void main8() {
+  print('Digite o primeiro número:');
+  double n1 = double.parse(stdin.readLineSync()!);
+  print('Digite o segundo número:');
+  double n2 = double.parse(stdin.readLineSync()!);
+  print('Digite o terceiro número:');
+  double n3 = double.parse(stdin.readLineSync()!);
+  print('A média é ${(n1 + n2 + n3) / 3}');
+}
+
+void main9() {
+  print('Digite a senha:');
+  String senha = stdin.readLineSync()!;
+  if (senha == '1234') {
+    print('Senha correta');
+  } else {
+    print('Senha incorreta');
+  }
+}
+
+void main10() {
+  print('Digite a quantidade de produtos:');
+  int quantidade = int.parse(stdin.readLineSync()!);
+  print('Digite o preço unitário:');
+  double preco = double.parse(stdin.readLineSync()!);
+  print('Total da compra: ${quantidade * preco}');
+}
