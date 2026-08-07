@@ -1,0 +1,94 @@
+void main() {
+  // 1. For de 1 até 10
+  for (int i = 1; i <= 10; i++) print(i);
+
+  // 2. Contagem regressiva
+  for (int i = 10; i >= 1; i--) print(i);
+  print("Fim da contagem!");
+
+  // 3. Pares de 1 até 20
+  for (int i = 2; i <= 20; i += 2) print(i);
+
+  // 4. Tabuada
+  int numero = 7;
+  for (int i = 1; i <= 10; i++) print("$numero x $i = ${numero * i}");
+
+  // 5. Soma de 1 até 10
+  int soma = 0;
+  for (int i = 1; i <= 10; i++) soma += i;
+  print("Soma = $soma");
+
+  // 6. Turma
+  String turma = "3° B";
+  for (int i = 1; i <= 5; i++) print("A turma $turma está estudando Dart");
+
+  // 7. -5 até 5
+  for (int i = -5; i <= 5; i++) {
+    if (i < 0) print("$i negativo");
+    else if (i == 0) print("$i zero");
+    else print("$i positivo");
+  }
+
+  // 8. While 1 até 10
+  int w1 = 1;
+  while (w1 <= 10) { print(w1); w1++; }
+
+  // 9. While 20 até 10
+  int w2 = 20;
+  while (w2 >= 10) { print(w2); w2--; }
+
+  // 10. Soma 1 até 5
+  int w3 = 1, soma2 = 0;
+  while (w3 <= 5) { soma2 += w3; w3++; }
+  print("Soma = $soma2");
+
+  // 11. Tentativas
+  int tentativas = 1;
+  while (tentativas <= 3) { print("Tentativa $tentativas"); tentativas++; }
+
+  // 12. Estoque
+  int estoque = 5;
+  while (estoque > 0) { print("Estoque: $estoque"); estoque--; }
+
+  // 13. Bateria
+  int bateria = 100;
+  while (bateria > 0) { print("Bateria: $bateria%"); bateria -= 10; }
+
+  // 14. Cadastro
+  int usuario = 1;
+  while (usuario <= 5) { print("Usuário $usuario cadastrado"); usuario++; }
+
+  // 15. Do while 3 vezes
+  int dw1 = 1;
+  do { print("Executando o aplicativo..."); dw1++; } while (dw1 <= 3);
+
+  // 16. Menu
+  int opcao = 3;
+  do { print("Menu: 1-Perfil, 2-Mensagens, 3-Configurações, 0-Sair"); opcao--; } while (opcao >= 0);
+
+  // 17. Download
+  int progresso = 0;
+  do { print("Download: $progresso%"); progresso += 20; } while (progresso <= 100);
+
+  // 18. Carregamento
+  int carga = 0;
+  do { print("Carregando: $carga%"); carga += 25; } while (carga <= 100);
+
+  // 19. Três contagens
+  for (int i = 1; i <= 5; i++) print("For: $i");
+  int w4 = 1; while (w4 <= 5) { print("While: $w4"); w4++; }
+  int dw2 = 1; do { print("Do While: $dw2"); dw2++; } while (dw2 <= 5);
+
+  // 20. Pontuação
+  String jogador = "Maria";
+  int pontos = 0;
+  for (int fase = 1; fase <= 5; fase++) {
+    pontos += 10;
+    print("Jogador $jogador - Fase $fase - Pontos: $pontos");
+  }
+}
+
+    pontos += 10;
+    print("Jogador $jogador - Fase $fase concluída - Pontos: $pontos");
+  }
+}
