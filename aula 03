@@ -1,0 +1,21 @@
+void main() {
+  // Criando a fila (lista de Strings)
+  List<String> fila = [];
+
+  // Adicionando 3 clientes
+  fila.add("Cliente 1");
+  fila.add("Cliente 2");
+  fila.add("Cliente 3");
+
+  print("Fila inicial: $fila");
+
+  // Atendendo o primeiro cliente (FIFO)
+  String atendido = fila.removeAt(0);
+  print("Cliente atendido: $atendido");
+
+  // Fila final
+  print("Fila final: $fila");
+
+  // Tamanho final da fila
+  print("Tamanho da fila: ${fila.length}");
+}
