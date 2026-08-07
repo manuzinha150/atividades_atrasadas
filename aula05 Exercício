@@ -1,0 +1,61 @@
+class Produto {
+  String nome;
+  double _preco = 0;
+  int _quantidade = 0;
+
+  Produto(this.nome, double preco, int quantidade) {
+    setPreco(preco);
+    setQuantidade(quantidade);
+  }
+
+  double getPreco() => _preco;
+  int getQuantidade() => _quantidade;
+
+  void setPreco(double valor) {
+    if (valor > 0) {
+      _preco = valor;
+    } else {
+      print('Preço inválido para $nome');
+    }
+  }
+
+  void setQuantidade(int valor) {
+    if (valor >= 0) {
+      _quantidade = valor;
+    } else {
+      print('Quantidade inválida para $nome');
+    }
+  }
+
+  double valorTotal() {
+    return _preco * _quantidade;
+  }
+
+  void mostrar() {
+    print('Produto: $nome');
+    print('Preço: R\$ $_preco');
+    print('Quantidade: $_quantidade');
+    print('Total em estoque: R\$ ${valorTotal()}');
+    print('-----------------------------');
+  }
+}
+
+void main() {
+  Produto p1 = Produto('Celular', 2500, 8);
+  Produto p2 = Produto('Fone de ouvido', 0, 15); // preço inválido
+  Produto p3 = Produto('Monitor', 1200, -4);     // quantidade inválida
+
+  p1.mostrar();
+  p2.mostrar();
+  p3.mostrar();
+
+  // Testando alterações
+  p1.setPreco(-200);
+  p1.setQuantidade(-1);
+  p1.mostrar();
+
+  p2.setPreco(200);
+  p2.setQuantidade(10);
+  p2.mostrar();
+}
+
